@@ -1,0 +1,21 @@
+﻿@model Person;
+
+<div class="alert alert-primary text-center" role="alert"> Login </div>
+@{
+    <form action="Login" method="post">
+        <div class="mb-3">
+            <div class="mb-3">
+                <label asp-for="UserName"></label>
+                <input asp-for="UserName" class="form-control">
+                <span class="text-danger" asp-validation-for="UserName"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control">
+                <span class="text-danger" asp-validation-for="Password"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+}

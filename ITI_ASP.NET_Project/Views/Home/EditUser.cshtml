@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "_Admin";
+}
+@model Person
+
+<div class="container-fluid py-4">
+    <form method="post" asp-action="EditUser" asp-controller="Home" enctype="multipart/form-data">
+        <div class="form-row d-flex gap-4">
+            <div class="form-group col-md-6">
+                <label asp-for="UserName" for="Username">Username</label>
+                <input asp-for="UserName" type="text" class="form-control" id="Username" placeholder="Enter username" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-row d-flex gap-4">
+            <div class="form-group col-md-6">
+                <label asp-for="Password" for="Password">Password</label>
+                <input asp-for="Password" type="text" class="form-control" id="Password" placeholder="Enter Password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <select class="form-select" asp-for="Type">
+                <option value="Admin">Admin</option>
+                <option value="User">User</option>
+            </select>
+            <span class="text-danger" asp-validation-for="Type"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="margin: 50px 0">Update User</button>
+    </form>
+</div>

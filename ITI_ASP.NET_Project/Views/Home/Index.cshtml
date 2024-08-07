@@ -1,0 +1,28 @@
+﻿@{
+	Layout = "_Layout";
+}
+@model List<Product>
+
+
+<img src="~/images/bg.jpg" style="width:100%; position:absolute; top:-207px; left:0; z-index:-1;" />
+
+<div class="d-grid justify-content-center align-bottom align-items-center" style="height:100vb">
+	<h1 class="text-center" style="font-size:50px"> Welcome to our shop </h1>
+</div>
+
+<div class="container mt-5">
+
+	<h1 class="text-center"> Our Menu </h1>
+	<div class="container d-flex flex-wrap gap-5 justify-content-center mt-5">
+		@foreach ( var item in Model ) {
+			<div class="card" style="width: 18rem;">
+				<img class="card-img-top" src="@Url.Action("GetImage", "Home", new { id = item.Id })" alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">@item.Name</h5>
+					<p class="card-text">@item.Price</p>
+				</div>
+			</div>
+		}
+	</div>
+
+</div>

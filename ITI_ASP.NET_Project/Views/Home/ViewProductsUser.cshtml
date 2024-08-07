@@ -1,0 +1,19 @@
+﻿@{
+	Layout = "_User";
+}
+@model List<Product>
+
+<div class="container d-flex flex-wrap gap-5 justify-content-center">
+	
+	@foreach ( var item in Model ) {
+		<div class="card" style="width: 18rem;">
+			<img class="card-img-top" src="@Url.Action("GetImage", "Home", new { id = item.Id })" alt="Card image cap">
+			<div class="card-body">
+				<h5 class="card-title">@item.Name</h5>
+				<p class="card-text">@item.Price</p>
+				<a asp-action="AddToCart" asp-controller="Home" asp-route-ProductId="@item.Id" class="btn btn-primary">Add To Cart</a>
+			</div>
+		</div>
+	}
+
+</div>

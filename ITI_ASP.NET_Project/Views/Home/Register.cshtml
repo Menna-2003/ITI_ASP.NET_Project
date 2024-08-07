@@ -1,0 +1,28 @@
+﻿@model Person;
+
+<div class="alert alert-primary text-center" role="alert"> Add Person </div>
+@{
+    <form action="Register" method="post">
+        <div class="mb-3">
+            <div class="mb-3">
+                <label asp-for="UserName"></label>
+                <input asp-for="UserName" class="form-control">
+                <span class="text-danger" asp-validation-for="UserName"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control">
+                <span class="text-danger" asp-validation-for="Password"></span>
+            </div>
+            <div class="mb-3">
+                <select class ="form-select" asp-for="Type">
+                    <option value="Admin">Admin</option>
+                    <option value="User">User</option>
+                </select>
+                <span class="text-danger" asp-validation-for="Type"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+}
